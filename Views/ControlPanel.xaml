@@ -1,10 +1,10 @@
-﻿<wpf:ControlPanel x:TypeArguments="cegs:CegsLL6" x:Class="CegsLL6.Views.ControlPanel"
+﻿<wpf:ControlPanel x:TypeArguments="cegs:CegsAeon" x:Class="CegsAeon.Views.ControlPanel"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:cegs="clr-namespace:AeonHacs.Components"
-        xmlns:local="clr-namespace:CegsLL6.Views"
+        xmlns:local="clr-namespace:CegsAeon.Views"
         xmlns:wpf="http://schemas.aeonhacs.com/wpf"
         mc:Ignorable="d"
         d:DesignWidth="1020"
@@ -22,7 +22,7 @@
     <!--==============================================-->
     <Grid>
         <!-- Simplify references to Cegs properties -->
-        <wpf:View x:Name="Cegs" Component="CegsLL6" Visibility="Collapsed" />
+        <wpf:View x:Name="Cegs" Component="CegsAeon" Visibility="Collapsed" />
 
         <!-- System Uptime -->
         <StackPanel Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -129,10 +129,10 @@
             <!--==============================================-->
             <Canvas DockPanel.Dock="Left" Width="760" Height="330" Margin="0,10,0,80" VerticalAlignment="Top" HorizontalAlignment="Center">
                 <local:VS Canvas.Left="223" Canvas.Top="154"/>
-                <wpf:IM6 Canvas.Left="0" Canvas.Top="49" />
-                <wpf:CT Canvas.Left="267" Canvas.Top="74" />
+                <wpf:IM2 Canvas.Left="0" Canvas.Top="118" />
+                <wpf:CT Canvas.Left="267" Canvas.Top="74" PressureSensorType="MKS_722_LP" />
                 <wpf:VTT Canvas.Left="389" Canvas.Top="133" />
-                <wpf:MC Canvas.Left="441" Canvas.Top="98" />
+                <wpf:MC Canvas.Left="441" Canvas.Top="98" PressureSensorType="MKS_DMB" />
                 <local:Split Canvas.Left="493" Canvas.Top="133" />
                 <wpf:GM6 Canvas.Left="532" Canvas.Top="49" />
 
@@ -140,9 +140,10 @@
                 <wpf:Valve HelpText="CT-VTT valve" Component="vCT_VTT" Canvas.Left="371" Canvas.Top="128" d:ValveState="Opened" />
                 <wpf:Valve HelpText="VTT-MC valve" Component="vVTT_MC" Canvas.Left="423" Canvas.Top="128" d:ValveState="Opened" />
                 <wpf:Valve HelpText="MC-Split valve" Component="vMC_Split" Canvas.Left="475" Canvas.Top="128" d:ValveState="Opened" />
-                <wpf:Valve HelpText="Split-GM valve" Component="vGM_Split" Canvas.Left="514" Canvas.Top="128" d:ValveState="Opened" />
+                <wpf:Valve HelpText="Split-GM valve" Component="vSplit_GM" Canvas.Left="514" Canvas.Top="128" d:ValveState="Opened" />
                 
             </Canvas>
+
         </DockPanel>
     </Grid>
 </wpf:ControlPanel>

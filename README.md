@@ -1,2 +1,2 @@
-# CegsLL6
-Template for low-level 6 GR x 6 IP Cegs
+# CegsAeon
+Aeon Laboratories in-house Cegs6x1 (six graphite reactor, one inlet port) application.
