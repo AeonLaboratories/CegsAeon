@@ -5,10 +5,10 @@
     <Grid>
         <Canvas Width="336" Height="243" Visibility="Visible">
             <!--Vacuum manifold-->
-            <wpf:Chamber Canvas.Top="18" Component="Section.VM" HelpText="Vacuum manifold"
-                Data="M9.5,0.5 v86 M9.5,69.5 h317 M133.5,0.5 v69 M326.5,0.5 v86
-                      M35.5,56.5 v30 M61.5,69.5 v-13 M107.5,69.5 v17 M159.5,69.5 v17
-                      M248.5,69.5 v17 M274.5,69.5 v17" />
+            <wpf:Chamber Canvas.Left="5" Canvas.Top="18" Component="Section.VM" HelpText="Vacuum manifold"
+                Data="M0,0 v86 M0,69 h317 M124,0 v69 M317,0 v86
+                      M26,56 v30 M52,69 v-13 M98,69 v17 M150,69 v17
+                      M239,69 v17 M265,69 v17" />
 
             <!--Vacuum manifold pressure-->
             <wpf:VMPressure Canvas.Left="22.5" Canvas.Bottom="160" />
