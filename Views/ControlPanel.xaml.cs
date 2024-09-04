@@ -21,12 +21,14 @@ public partial class ControlPanel : AeonHacs.Wpf.Views.ControlPanel
 
     HacsBase Hacs => Bridge?.HacsImplementation;
 
+    // Empty constructor required for the designer to work.
     public ControlPanel()
     {
         InitializeComponent();
     }
 
-    public ControlPanel(Action closeUI) : base(closeUI)
+    // Parameterized constructor called by the application on startup.
+    public ControlPanel(Action closeAction) : base(closeAction)
     {
         InitializeComponent();
 
