@@ -15,22 +15,21 @@ namespace CegsAeon.Views;
 /// <summary>
 /// Interaction logic for ControlPanel.xaml
 /// </summary>
-public partial class ControlPanel : AeonHacs.Wpf.Views.ControlPanel<AeonHacs.Components.CegsAeon>
+public partial class ControlPanel : AeonHacs.Wpf.Views.ControlPanel
 {
     ResourceDictionary Preferences = (ResourceDictionary)Application.Current.Resources["PreferencesDictionary"];
 
-    HacsBase Hacs => Bridge?.GetHacs();
+    HacsBase Hacs => Bridge?.HacsImplementation;
 
-    // Empty constructor required for the designer to work.
     public ControlPanel()
     {
         InitializeComponent();
     }
 
-    // Parameterized constructor called by the application on startup.
-    public ControlPanel(Action closeAction) : base(closeAction)
+    public ControlPanel(Action closeUI) : base(closeUI)
     {
         InitializeComponent();
+
         PopulateProcessSelector();
 
         if (Hacs is Cegs cegs)
