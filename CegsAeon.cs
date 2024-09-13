@@ -209,43 +209,10 @@ public partial class CegsAeon : Cegs
         v.OpenWait();       // how big is the pressure bump?
     }
 
-
-    protected virtual void ExercisePorts(ISection s)
-    {
-        s.Isolate();
-        s.Open();
-        s.OpenPorts();
-        WaitSeconds(5);
-        s.ClosePorts();
-        s.Evacuate(OkPressure);
-    }
-
     protected void CalibrateManualHeaters()
     {
         var tc = Find<IThermocouple>("tCal");
         CalibrateManualHeater(Find<IHeater>("hIP1CCQ"), tc);
-    }
-
-    protected virtual void TestAdmit(string gasSupply, double pressure)
-    {
-        var gs = Find<GasSupply>(gasSupply);
-        gs?.Destination?.OpenAndEvacuate();
-        gs?.Destination?.ClosePorts();
-        gs?.Admit(pressure);
-        WaitSeconds(10);
-        EventLog.Record($"Admit test: {gasSupply}, target: {pressure:0.###}, stabilized: {gs.Meter.Value:0.###} in {ProcessStep.Elapsed:m':'ss}");
-        gs?.Destination?.OpenAndEvacuate();
-    }
-
-    protected virtual void TestPressurize(string gasSupply, double pressure)
-    {
-        var gs = Find<GasSupply>(gasSupply);
-        gs?.Destination?.OpenAndEvacuate(OkPressure);
-        gs?.Destination?.ClosePorts();
-        gs?.Pressurize(pressure);
-        WaitSeconds(60);
-        EventLog.Record($"Pressurize test: {gasSupply}, target: {pressure:0.###}, stabilized: {gs.Meter.Value:0.###} in {ProcessStep.Elapsed:m':'ss}");
-        gs?.Destination?.OpenAndEvacuate();
     }
 
     protected virtual void TestGasSupplies()
